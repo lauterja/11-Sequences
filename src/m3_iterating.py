@@ -5,8 +5,8 @@ in its most classic form:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jacob Lauteri.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -21,7 +21,7 @@ def main():
 def run_test_count_negatives():
     """ Tests the   count_negatives   function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  count_negatives  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -83,9 +83,21 @@ def run_test_count_negatives():
     print('       actual:  ', actual)
 
     # -------------------------------------------------------------------------
-    # TODO 2 (continued):  Add your 2 ADDITIONAL tests here:
+    # DONE 2 (continued):  Add your 2 ADDITIONAL tests here:
     # -------------------------------------------------------------------------
+    # Test 6:
+    expected = 3
+    actual = count_negatives([8, -13, -7, -5])
+    print()
+    print('Test 6 expected:', expected)
+    print('       actual:  ', actual)
 
+    # Test 7:
+    expected = 2
+    actual = count_negatives([7, 36, -82, -11])
+    print()
+    print('Test 7 expected:', expected)
+    print('       actual:  ', actual)
 
 def count_negatives(seq):
     """
@@ -106,7 +118,10 @@ def count_negatives(seq):
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
-
+    total = 0
+    for k in range(seq):
+        total = total + len(count_negatives(seq))
+    return total
 
 def run_test_count_short_ones():
     """ Tests the   count_short_ones   function. """
